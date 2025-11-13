@@ -12,6 +12,7 @@ class LoginPageLocators:
     YANDEX_BUTTON = (By.XPATH, '//*[@data-l="t,yandex"]')
     LOGIN_TAB = (By.XPATH, '//*[@data-l="t,login_tab"]')
     QR_TAB = (By.XPATH, '//*[@data-l="t,qr_tab"]')
+    REGISTRATION_BUTTON = (By.XPATH, '<//*div[@class="external-oauth-login-footer"]/a[@data-l="t,register"]')
 
 class LoginPageHelper(BasePage):
     pass
