@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 class LoginPageLocators:
     LOGIN_FIELD = (By.ID,'field_email')
-    PASSWORD_FIELD = (By.ID, 'field_password')
+    PASSWORD_FIELD = (By.ID, 'password')
     LOGIN_BUTTON = (By.XPATH, '//*[@data-l="t,sign_in"]')
     QR_BUTTON = (By.XPATH, '//*[@data-l="t,get_qr"]')
     RESTORE_BUTTON = (By.XPATH, '//*[@data-l="t,restore"]')
