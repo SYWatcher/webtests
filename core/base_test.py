@@ -2,6 +2,7 @@ import pytest
 from selenium import webdriver
 from faker import Faker
 
+
 @pytest.fixture(scope='session')
 def browser():
     driver = webdriver.Chrome()
