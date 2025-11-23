@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 class LoginPageLocators:
     LOGIN_FIELD = (By.ID,'field_email')
-    PASSWORD_FIELD = (By.ID, 'password')
+    PASSWORD_FIELD = (By.ID, 'field_password')
     LOGIN_BUTTON = (By.XPATH, '//*[@data-l="t,sign_in"]')
     QR_BUTTON = (By.XPATH, '//*[@data-l="t,get_qr"]')
     RESTORE_BUTTON = (By.XPATH, '//*[@data-l="t,restore"]')
@@ -12,7 +12,35 @@ class LoginPageLocators:
     YANDEX_BUTTON = (By.XPATH, '//*[@data-l="t,yandex"]')
     LOGIN_TAB = (By.XPATH, '//*[@data-l="t,login_tab"]')
     QR_TAB = (By.XPATH, '//*[@data-l="t,qr_tab"]')
-    REGISTRATION_BUTTON = (By.XPATH, '<//*div[@class="external-oauth-login-footer"]/a[@data-l="t,register"]')
+    REGISTRATION_BUTTON = (By.XPATH, '//div[@class="external-oauth-login-footer"]//a[@data-l="t,register"]')
+    ERROR_TEXT = (By.XPATH, '//*[@class="input-e login_error"]')
 
 class LoginPageHelper(BasePage):
-    pass
+    def __init__(self, driver):
+        self.driver = driver
+        self.check_page()
+
+    def check_page(self):
+        self.find_element(LoginPageLocators.LOGIN_TAB)
+        self.find_element(LoginPageLocators.LOGIN_FIELD)
+        self.find_element(LoginPageLocators.PASSWORD_FIELD)
+        self.find_element(LoginPageLocators.LOGIN_BUTTON)
+        self.find_element(LoginPageLocators.QR_BUTTON)
+        self.find_element(LoginPageLocators.RESTORE_BUTTON)
+        self.find_element(LoginPageLocators.VK_BUTTON)
+        self.find_element(LoginPageLocators.MAILRU_BUTTON)
+        self.find_element(LoginPageLocators.YANDEX_BUTTON)
+        self.find_element(LoginPageLocators.LOGIN_TAB)
+        self.find_element(LoginPageLocators.QR_TAB)
+        self.find_element(LoginPageLocators.REGISTRATION_BUTTON)
+
+    def send_login(self, mail_login):
+        self.find_element(LoginPageLocators.LOGIN_FIELD).send_keys(mail_login)
+
+    def click_login(self):
+        self.find_element(LoginPageLocators.LOGIN_BUTTON).click()
+
+    def get_error_text(self):
+        return self.find_element(LoginPageLocators.ERROR_TEXT).text
+
+
