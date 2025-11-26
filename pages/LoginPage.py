@@ -3,7 +3,7 @@ from pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
 class LoginPageLocators:
-    LOGIN_FIELD = (By.ID,'field_email')
+    LOGIN_FIELD = (By.NAME,'st.email')
     PASSWORD_FIELD = (By.NAME, 'st.password')
     LOGIN_BUTTON = (By.XPATH, '//*[@data-l="t,sign_in"]')
     QR_BUTTON = (By.XPATH, '//*[@data-l="t,get_qr"]')
