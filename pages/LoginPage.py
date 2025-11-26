@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 
 class LoginPageLocators:
     LOGIN_FIELD = (By.ID,'field_email')
-    PASSWORD_FIELD = (By.ID, 'field_password')
+    PASSWORD_FIELD = (By.NAME, 'st.password')
     LOGIN_BUTTON = (By.XPATH, '//*[@data-l="t,sign_in"]')
     QR_BUTTON = (By.XPATH, '//*[@data-l="t,get_qr"]')
     RESTORE_BUTTON = (By.XPATH, '//*[@data-l="t,restore"]')
@@ -17,7 +17,7 @@ class LoginPageLocators:
     ERROR_TEXT = (By.XPATH, '//*[@class="input-e login_error"]')
     GO_BACK_BUTTON = (By.XPATH,'//*[data-l="t,cancel"]')
     SUPPORT_BUTTON = (By.XPATH, '//*[@class="external-oauth-login-help portlet_f"]')
-    PROFILE_RECOVERY_BUTTON = (By.NAME, 'st.go_to_recovery')
+    PROFILE_RECOVERY_BUTTON = (By.XPATH, '//*[@value="st.go_to_recovery"]')
 
 class LoginPageHelper(BasePage):
     def __init__(self, driver):

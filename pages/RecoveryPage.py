@@ -3,10 +3,10 @@ from pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
 
 class RecoveryPageLocators:
-    PHONE_BUTTON = (By.XPATH,'//*[data-l="t,phone"]')
-    EMAIL_BUTTON = (By.XPATH,'//*[data-l="t,email"]')
-    QR_CODE = (By.XPATH,'//*[class="qr_code_image"]')
-    SUPPORT_BUTTON = (By.XPATH,'//*[data-l="t,support"]')
+    PHONE_BUTTON = (By.XPATH,'//*[@data-l="t,phone"]')
+    EMAIL_BUTTON = (By.XPATH,'//*[@data-l="t,email"]')
+    QR_CODE = (By.XPATH,'//*[@class="qr_code_image"]')
+    SUPPORT_BUTTON = (By.XPATH,'//*[@data-l="t,support"]')
 
 class RecoveryPageHelper(BasePage):
     def __init__(self, driver):
