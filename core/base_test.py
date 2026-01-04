@@ -5,7 +5,9 @@ from faker import Faker
 
 @pytest.fixture(scope='session')
 def browser():
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument('--lang=ru')
+    driver = webdriver.Remote(command_executor="http://217.114.15.199:4444",options=options)
     driver.set_window_size(1920,1080)
     yield driver
     driver.quit()
